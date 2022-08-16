@@ -69,7 +69,9 @@ TEMPLATES = [
         },
     },
 ]
+import os
 
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'report_exchange.settings')
 WSGI_APPLICATION = 'celery_project.wsgi.application'
 
 # Database

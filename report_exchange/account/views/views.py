@@ -16,7 +16,7 @@ from django_celery_beat.models import IntervalSchedule, PeriodicTask
 
 from report_exchange import settings
 from account.serializers.serializer import RegisterSerializer, UserSerializer
-from .tasks import send_email, schedule_send_email
+from account.tasks import send_email, schedule_send_email
 
 r = redis.Redis("localhost", 6379, db=0)
 if r.get("adtrace_exchange") == None:

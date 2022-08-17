@@ -4,3 +4,6 @@ class Base:
 
     user: str = "user"
     message = "message"
+
+    email: str = "email"
+    password: str = "password"

@@ -1,9 +1,10 @@
 from django.urls import path, include
 # from .views import RegisterApi
-from . import views
+from account.views import views
 
 urlpatterns = [
-    path('api/register/', views.RegisterApi.as_view()),
+    path('register/', views.RegisterApi.as_view()),
+    path('login', views.Login.as_view()),
     path("send/exchange", views.SendEmailSchedular.as_view()),
 
 ]

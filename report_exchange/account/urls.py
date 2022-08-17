@@ -3,7 +3,8 @@ from django.urls import path, include
 from account.views import views
 
 urlpatterns = [
-    path('api/register/', views.RegisterApi.as_view()),
+    path('register/', views.RegisterApi.as_view()),
+    path('login', views.Login.as_view()),
     path("send/exchange", views.SendEmailSchedular.as_view()),
 
 ]

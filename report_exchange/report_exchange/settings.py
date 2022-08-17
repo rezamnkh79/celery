@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'report_exchange',
     'rest_framework',
     'account',
-    'django_celery_beat'
-
+    'django_celery_beat',
 ]
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 MIDDLEWARE = [
@@ -56,7 +55,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'report_exchange.urls'
 
-# AUTH_USER_MODEL = 'account.User'
+AUTH_USER_MODEL = 'account.User'
 
 TEMPLATES = [
     {

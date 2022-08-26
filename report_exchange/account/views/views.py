@@ -14,7 +14,7 @@ from django_celery_beat.models import IntervalSchedule, PeriodicTask
 from django.contrib.auth import get_user_model
 
 from report_exchange import settings
-from account.serializers.serializer import RegisterSerializer, UserSerializer
+from account.serializers.serializer import RegisterSerializer, User, UserSerializer
 from account.tasks import send_email
 from rest_framework import status
 from account.models import models
@@ -61,8 +61,9 @@ class RegisterApi(generics.GenericAPIView):
 
 
 def test(request):
-    user = models.User.soft_objects.get_publish("mansourikhah@gmail.com")
-    return HttpResponse(user)
+    # user = models.User.soft_objects.get_publish("mansourikhah@gmail.com")
+    profile = models.Profile.objects.first()
+    return HttpResponse(profile.age)
 
 
 class SendEmailSchedular(generics.GenericAPIView):
